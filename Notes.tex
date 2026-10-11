@@ -150,22 +150,22 @@ forces we see (friction, tension, normal force, drag, applied force, spring/elas
 Newton's 3 laws relate force to motion:
 \begin{enumerate}
     \item
-        In the basence of external forces (or if the sum of external forces is 0), an object will maintain constant velocity.
+        In the absence of external forces (or if the sum of external forces is 0), an object will maintain constant velocity.
     \item
-        $ \sum_{}^{}{\xvec{F_{ext}} = m\xvec{a}} $ is the version we'll use, but the actual version is defined in terms of momentum: $ \xvec{F_{ext}} = \xvec[.]{p} = m\xvec{a} + \xvec{v}\dot{m} $
+        $ \sum_{}^{}{\xvec{F_{ext}} = m\xvec{a}} $ \\ That's the version we'll use, but the actual version is defined in terms of momentum: $ \xvec{F_{ext}} = \xvec[.]{p} = m\xvec{a} + \xvec{v}\dot{m} $
     \item
         If an object A exerts a force upon object B, then object B exerts an equal and opposite force on object A.
 \end{enumerate}
 
 \subsection {Force of Gravity}
-The force exerted by gravity is also known as the "weight" of an object. This is important -- if a test problem asks for an object's weight, don't answer with its mass, answer with the force exerted
+The force exerted by gravity is also known as the ``weight" of an object. This is important -- if a test problem asks for an object's weight, don't answer with its mass, answer with the force exerted
 on it by gravity.
 
 $$ \xvec{F_g} = \xvec{w} = m\xvec{g} $$
 
 \subsection {Normal Force}
 We subdivide the contact force between two objects into two forces: normal force ($ \xvec{F_N} $), which acts in the perpendicular direction and prevents illegal acceleration (i.e. an object clipping into another object),
-and friction, which acts in the parallel direction and which we'll talk about later.
+and friction ($\xvec{F_F}$), which acts in the parallel direction and which we'll talk about later.
 
 \subsection {Gravitational Forces and Fields}
 Newton's Law of Universal Gravitation:
@@ -184,7 +184,11 @@ $$ ||\xvec{g}|| = \frac{||\xvec{F_g}||}{m} = \frac{GM}{r^2} $$
 
 Note that this \uline{does not depend on the mass of the object gravity is acting on}.
 
-A useful application of the gravitational field and the shell theorem is this, where $ r $ is the distance of a point from the center of a large, spherical, uniformly dense mass $ M $ of radius $ R $:
+\subsection {Shell Theorem}
+A thin, uniform spherical shell of mass exerts the same force on an \uline{outside} object as though it were a point mass located at its center. Additionally, it exerts
+\uline{no} force on an object inside the shell. Given that, for our purposes, planets can be approximated as several thin, nested shells, this is very useful.
+
+A useful application of the shell theorem is this, where $\xvec{g(r)}$ is the gravitational field and $ r $ is the distance of a point from the center of a large, spherical, uniformly dense mass $ M $ of radius $ R $:
 $$
 \xvec{g(r)} =
 \begin{cases}
@@ -192,10 +196,6 @@ $$
 \frac{GM}{r^2}, & r > R.
 \end{cases}
 $$
-
-\subsection {Shell Theorem}
-A thin, uniform spherical shell of mass exerts the same force on an \uline{outside} object as though it were a point mass located at its center. Additionally, it exerts
-\uline{no} force on an object inside the shell. Given that, for our purposes, planets can be approximated as several thin, nested shells, this is very useful.
 
 \subsection {Friction}
 \subsubsection{Static Friction}
