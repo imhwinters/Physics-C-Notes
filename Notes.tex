@@ -1,0 +1,222 @@
+\documentclass{article}
+\usepackage{amsmath}
+\usepackage[letterpaper, top=0.5in, left=0.4in, right=0.4in, bottom=0.5in]{geometry}
+\usepackage{titlesec}
+\usepackage[normalem]{ulem}
+\usepackage{blindtext}
+\usepackage{wasysym}
+\usepackage{hyperref}
+\usepackage{tikz}
+\input{xvec.tex} % Found this, through a forum post, at https://github.com/narpfel/latex-template/blob/master/xvec.tex. Thanks to whoever this is.
+
+\newcommand{\HRule}[1]{\rule{\linewidth}{#1}}
+
+\hypersetup{
+    colorlinks=true,
+    linkcolor=black,
+    citecolor=blue,
+    urlcolor=cyan
+}
+
+\titleformat{\section}
+    {\normalfont\Large\bfseries\centering}
+    {}{0pt}{}
+\titleformat{\subsection}
+    {\normalfont\bfseries}
+    {}{0pt}{}
+\titleformat{\subsubsection}
+    {\normalfont}
+    {}{0pt}\uline{}
+
+\begin{document}
+
+\title{
+    \normalsize \textsc{}
+    \\ [2.0cm]
+    \HRule{1.5pt} \\
+    \Large \textbf{AP Physics C Study Guide} \\
+    \HRule{1.5pt} \\
+    \Large{Mr. Maine, North Hollywood High} \\
+    \normalsize{Based on lectures taught from 8/12/26 to x/x/27}
+}
+\date{}
+\author{Isaac W \smiley{}}
+
+\maketitle
+\newpage
+
+\tableofcontents
+\newpage
+
+\section{Units and Dimensional Analysis}
+
+\subsection{Units}
+Almost everything has units, and they matter.
+When you write a variable, the units are built into the variable, e.g. $ a = 15 \frac{m}{s^2} $ or $ \xvec{v} = \langle 10 \frac{m}{s}, 12 \frac{m}{s}, -4 \frac{m}{s} \rangle $.
+
+\subsection{Unit Systems}
+For this class, we mostly use the SI (\textit{Système international d'unités} AKA International System of Units) system -- the basic units used in AP Physics C are meters(m), kilograms(kg), seconds(s), and amperes (A). The other base
+units of SI are the kelvin (K), the mole (mol), and the candela (cd), but these aren't used in this course.
+Derived units, like the Newton or the Watt, are built from these basic units.
+
+Prefixes, like kilo-, centi-, or milli-, can be prepended to a unit to multiply it by a specific factor.
+
+The other metric system is the CGS (centimeters, grams, seconds) system, which can be useful for smaller values.
+
+The AP test uses the SI system only, and Mr. Maine will mostly use SI. When Maine uses units from another unit system, he will tell you about all relevant conversions.
+
+\subsection{Dimensional Consistency}
+Dimensional consistency is always necessary. Here are its requirements:
+\begin{enumerate}
+    \item Any two quantities that we equate must have the same dimensions. \\ Correct: $ (3m)(2m) = 6m^2 $ \\ Incorrect (obviously in this case, but with lots of operations it can be hard to tell):
+        $ 5.3g = 2\frac{m}{s} $ \\ Because units can be consistent without the same unit system being used, e.g. $ 1m = 3.28ft $, we often use generic units when doing dimensional analysis: \\
+        M: Generic unit of mass \\ L: Generic unit of length \\ T: Generic unit of time
+    \item If you're adding or subtracting quantities, they \uline{must} have the same dimensions.
+    \item Dimensions obey algebra rules. \\ For example, 
+        $ \Delta x = v_0 t + \frac{1}{2}at^2 $
+        in generic dimensional form is
+        $ L - L = \frac{L}{T} * {T} + \frac{L}{T^2} * {T^2} \to L = L$
+\end{enumerate}
+
+\newpage
+\section{Kinematics}
+
+\subsection{Position}
+Position can be any variable, but it's common to default to $ x $, or, as a vector, $ \vec{r} $.
+
+\subsection{Speed and Velocity}
+Speed and velocity are two different quantities: speed is the \uline{magnitude} of velocity (i.e. how fast is an object going), whereas velocity also has direction (i.e. how fast an object is going
+and in what direction).
+
+With velocity as a scalar:
+$$ v = \dot{x} $$
+$$ speed = |v| $$
+
+And as a vector:
+$$ \xvec{v} = \xvec[.]{r} $$
+$$ speed = ||\xvec{v}|| $$
+
+\subsection{Acceleration}
+Just the rate of change of speed:
+$$ a = \dot{v} = \ddot{v} $$
+Or as a vector:
+$$ \xvec{a} = \xvec[.]{v} = \xvec[:]{v} $$
+
+\subsection{Equations Using Constant Acceleration}
+These equations are \uline{only true when acceleration is CONSTANT}. Do not use otherwise.
+
+In this section, I'll write position, velocity, and acceleration as scalars, as one would do for a 1D motion problem.
+In 2D or 3D problems, it's useful to split everything up into individual components and solve each component like an independent 1D problem.
+
+$$ \Delta x = v_0t + \frac{1}{2}at^2 $$
+$$ \Delta v = at $$
+$$ v_{avg} = \frac{v_0+v}{2} $$
+$$ v^2 = v_0^2+2a\Delta x \to a \propto \frac{1}{\Delta x} $$
+
+Note: you can use $ v_{avg} = \frac{\Delta x}{t} $ and $ a_{avg} = \frac{\Delta v}{t} $ even when acceleration isn't constant.
+
+\subsection{Reference Frames}
+Reference frames are arbitrary. In ``lab frame", which is the reference frame where walls, furniture, etc. are assumed to have $ v = 0 $, my computer's velocity is 0. W/r/t the sun? Its velocity is
+$ \sim30,000 \frac{m}{s} $!
+
+Fortunately, we assume physics scenarios are in lab frame, unless otherwise specified.
+If we want to discuss reference frames, we introduce a new vector notation: $ \xvec{r_{A/B}} $, where $ A $ and $ B $ are both points, is the position of A w/r/t B, i.e. $ \xvec{a} $ given that
+the origin is at $ B $. You can formally change reference frames like so:
+$$ \xvec{r_{C/B}} + \xvec{r_{A/C}} = \xvec{r_{A/B}} $$
+$$ \xvec{r_{V/P}} + \xvec{r_{X/V}} = \xvec{r_{X/P}} $$
+
+It's best to not think about these formulas, though. Common sense and imagining viewing the same thing from two different perspectives are usually easier and faster.
+
+\subsection{The Range Formula}
+This formula is very limited. Scenario: a projectile is launched at a known angle from the horizontal, and lands \uline{at the same height}. The projectile must experience no air resistance,
+and doesn't go far enough for the curvature of the earth or any variation in gravity to matter. Where does it land?
+$$ \Delta x = \frac{v_0^2\sin{2\theta}}{g} $$
+
+We haven't seen $ g $ yet, but it's simply the acceleration due to gravity when an object is under a planet's gravitational pull. On Earth, $ g $ approximates to $ 9.81 \frac{m}{s} $. On the AP exam (and
+on Maine's tests) you can use $ g = 10 \frac{m}{s} $.
+
+\newpage
+\section{Forces, Dynamics, and Newton's Laws}
+\subsection {Definition of a Force}
+A force is, at its core, a push or a pull.
+
+In SI units, the unit for a force is the "newton", or "N".
+$$ 1 N = 1 \frac{kg * m}{s^2} $$
+
+There are four fundamental forces: gravity, strong nuclear force, weak nuclear force, and electromagnetic force. In this class, we only really care about gravity and electromagnetic force. Most of the
+forces we see (friction, tension, normal force, drag, applied force, spring/elastic force, etc.) are just the complicated sums of a lot of EM interactions.
+
+\subsection {Newton's Laws}
+Newton's 3 laws relate force to motion:
+\begin{enumerate}
+    \item
+        In the basence of external forces (or if the sum of external forces is 0), an object will maintain constant velocity.
+    \item
+        $ \sum_{}^{}{\xvec{F_{ext}} = m\xvec{a}} $ is the version we'll use, but the actual version is defined in terms of momentum: $ \xvec{F_{ext}} = \xvec[.]{p} = m\xvec{a} + \xvec{v}\dot{m} $
+    \item
+        If an object A exerts a force upon object B, then object B exerts an equal and opposite force on object A.
+\end{enumerate}
+
+\subsection {Force of Gravity}
+The force exerted by gravity is also known as the "weight" of an object. This is important -- if a test problem asks for an object's weight, don't answer with its mass, answer with the force exerted
+on it by gravity.
+
+$$ \xvec{F_g} = \xvec{w} = m\xvec{g} $$
+
+\subsection {Normal Force}
+We subdivide the contact force between two objects into two objects: normal force ($ \xvec{F_N} $), which acts in the perpendicular direction and prevents illegal acceleration (i.e. an object clipping into another object),
+and friction, which acts in the parallel direction and which we'll talk about later.
+
+\subsection {Gravitational Forces and Fields}
+Newton's Law of Universal Gravitation:
+For two point masses $ M_1 $ and $ M_2 $, separated by a distance $ d $, the attractive force has magnitude
+$$ ||\xvec{F_g}|| = \frac{G M_1 M_2}{d^2} $$
+
+$ G $ is the universal gravitational constant. It equals $ 6.674 * 10^{-11} \frac{N m^2}{kg^2} $.
+$$ \xvec{F_{g1on2}} = \frac{GM_1M_2}{r^2}\hat{r_{2/1}} $$
+
+This gives us a new perspective on $ \xvec{g} $: It's $ \frac{\xvec{F_{g}}}{m} $, so we can also say that the units of $ \xvec{g} $ are $ \frac{N}{kg} $ as well as $ \frac{m}{s^2} $.
+
+$\xvec{g}$ can also be called the gravitational field.
+
+In the vicinity of a mass M, the gravitational field is
+$$ ||\xvec{g}|| = \frac{||\xvec{F_g}||}{m} = \frac{GM}{r^2} $$
+
+Note that this \uline{does not depend on the mass of the object gravity is acting on}.
+
+A useful application of the gravitational field and the shell theorem is this, where $ r $ is the distance of a point from the center of a large, spherical, uniformly dense mass $ M $ of radius $ R $:
+$$
+\xvec{g(r)} =
+\begin{cases}
+\frac{GM}{R^2}\left(\dfrac{r}{R}\right), & r \leq R, \\[8pt]
+\frac{GM}{r^2}, & r > R.
+\end{cases}
+$$
+
+\subsection {Shell Theorem}
+A thin, uniform spherical shell of mass exerts the same force on an \uline{outside} object as though it were a point mass located at its center. Additionally, it exerts
+\uline{no} force on an object inside the shell. Given that, for our purposes, planets can be approximated as several thin, nested shells, this is very useful.
+
+\subsection {Friction}
+\subsubsection{Static Friction}
+Static friction prevents slipping between solids, up to a certain limit. \uline{There is no equation} for the force of static friction. Up to a limit, it's whatever prevents slipping. The limit has an
+equation:
+$$ ||\xvec{F_{F,maximum}}|| = \mu_s||\xvec{F_N}|| $$
+
+\subsubsection{Kinetic Friction}
+Kinetic friction opposes motion when there is relative motion/slipping between solids:
+$$ ||\xvec{F_{F,kinetic}}|| = \mu_k||\xvec{F_N}|| $$
+
+$ \mu $ is the coefficient of friction, which depends on the two solids in question. The coefficient of static friction is always larger than the coefficient of kinetic friction.
+
+\subsection {Springs, Elasticity, and Hooke's Law}
+For many objects, length change is proportional to applied force.
+Hooke's law describes that length change $ \Delta L $:
+$$ ||\xvec{F_{spring}}|| \propto ||\Delta L|| $$
+
+The direction of $\xvec{F_{spring}}$ is always "restoring" i.e. pointing back toward the relaxed length.
+The proportionality constant is usally called "$k$" or "spring constant"
+$$ ||\xvec{F_{spring}}|| = k||\Delta L|| $$
+
+We always determine $k$ through experiment. It quantifies the stiffness of a spring, where a small $k$ denotes a not-stiff spring, like a slinky, and a small $k$ denotes a stiff spring, like a car shock.
+\end{document}
