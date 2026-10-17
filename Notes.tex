@@ -255,4 +255,19 @@ of their circle.
 
 It is extremely important to note that an object experiencing circular motion is not experiencing any new forces. An object's experiencing circular motion simply means that the net force exerted on them consistently points
 toward the center of a circle.
+
+\subsection{Center of Mass}
+Intuitively, the center of mass (CoM) of a system is the weighted average position of all the individual masses in the system. 
+
+In simple objects, the CoM is obvious by symmetry. The CoM needs to lie on any mirror planes in an object.
+
+For complex objects, the CoM is usally found by experiment -- if you balance or hang an object from a point, the CoM will be directly above or below the point in question. 
+
+There is a mathematical way to find the CoM. For a collection of point masses $m_1, m_2, ..., m_n$ at positions $\xvec{r_1}, \xvec{r_2}, ..., \xvec{r_n}$
+$$\xvec{r_{CoM}} = \frac{\sum_{i=0}^{n}{m_i\xvec{r_i}}}{\sum_{i=0}^{n}{m_i}}$$
+
+With a solid that isn't easily modeled with finitely many point masses:
+$$\xvec{r_{com}}=\frac{\int_{}^{}{\xvec{r}dm}}{M}$$
+or
+$$\xvec{r_{com}}=\frac{\int_{}^{}{\xvec{r}(\rho dV)}}{M}$$
 \end{document}
