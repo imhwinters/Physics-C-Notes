@@ -299,10 +299,9 @@ Energy is a scalar quantity.
 
 It's conserved, which means it can't be created or destroyed; it can be moved around, or converted between forms. It always needs to come from or go somewhere.
 
-\subsubsection{Kinetic Energy}
-Kinetic energy is the simplest kind of energy to define: It's energy associated with an object in omtion.
+Kinetic energy is the simplest kind of energy to define: It's energy associated with an object in motion.
 
-For a point mass moving at speed $v$, the kinetic energy $K$ is
+For a point of mass $m$ moving at speed $v$, the kinetic energy $K$ is
 $$K=\frac{1}{2}mv^2$$
 
 K depends on reference frame, so when working with energy it is extremely useful to not switch reference frames mid-problem.
@@ -335,5 +334,21 @@ Examples of conservative forces are gravity and ideal springs.
 Work done by a \textbf{nonconservative force} does depend on path and is not associated with a potential energy.
 
 Examples of nonconservative forces are friction, drag, tension, and normal force.
+
+\subsection{Potential Energy}
+Potential energy in a system is energy associated with the relative positions of objects in the system rather than their speeds. We can think of it as stored energy.
+
+For any conservative force $F$,
+$$W_F = -\Delta U$$
+Conventionally, $U$ is the symbol for potential energy.
+
+As such, given that $W_F = \int_{path}^{}{\xvec{F}(\xvec{r}) \cdot d\xvec{r}}$,
+$$ dW = -dU \to \xvec{F} \cdot d\xvec{r} = -dU \to \xvec{F} = \xvec{\nabla}U $$
+
+Don't worry! We'll be working almost entirely in 1D, where
+$$ dW = -dU \to F_xdx = -dU \to F_x = \frac{-dU}{dx}$$
+
+So just derive $U(x)$ to find the associated force. But given $F(x)$, there are infinitely many possible associated potential energies because of the $+C$ we get when we integrate. Let's look at gravity on an object: $F_g = -mg$.
+So $U(x) = -\int{F_xdx} = mgx+C$. The $C$, fortunately, is arbitrary. We usually pick it such that $U=0$ at a convenient location like the floor height.
 
 \end{document}
