@@ -329,12 +329,21 @@ $$ W = \Delta K $$
 Work done by a \textbf{conservative force} depends only on starting and ending positions, not the path taken between them. As such, they're also called "path-independent" forces.
 All conservative forces have an associated potential energy.
 
-Examples of conservative forces are gravity and ideal springs.
+Examples of conservative forces:
+\begin{itemize}
+    \item gravity
+    \item ideal springs
+\end{itemize}
 
 Work done by a \textbf{nonconservative force} does depend on path and is not associated with a potential energy.
 
-Examples of nonconservative forces are friction, drag, tension, and normal force.
-
+Examples of nonconservative forces:
+\begin{itemize}
+    \item friction
+    \item drag
+    \item tension
+    \item normal force
+\end{itemize}
 \subsection{Potential Energy}
 Potential energy in a system is energy associated with the relative positions of objects in the system rather than their speeds. We can think of it as stored energy.
 
@@ -348,7 +357,27 @@ $$ dW = -dU \to \xvec{F} \cdot d\xvec{r} = -dU \to \xvec{F} = \xvec{\nabla}U $$
 Don't worry! We'll be working almost entirely in 1D, where
 $$ dW = -dU \to F_xdx = -dU \to F_x = \frac{-dU}{dx}$$
 
-So just derive $U(x)$ to find the associated force. But given $F(x)$, there are infinitely many possible associated potential energies because of the $+C$ we get when we integrate. Let's look at gravity on an object: $F_g = -mg$.
-So $U(x) = -\int{F_xdx} = mgx+C$. The $C$, fortunately, is arbitrary. We usually pick it such that $U=0$ at a convenient location like the floor height.
+So just derive $U(x)$ to find the associated force. But given $F(x)$, there are infinitely many possible associated potential energies because of the $+C$ we get when we integrate. Let's look at gravity on an object,
+for which $F_g = -mg$.
+So 
+$$U(x) = -\int{F_xdx} = mgx+C$$
+The $C$, fortunately, is arbitrary. We usually pick it such that $U=0$ at a convenient location like the floor height.
 
+Another useful potential energy to know is that of a Hookean Spring, for which $F(x) = -kx$.
+$$U(x) = -\int{F(x)dx} = \frac{1}{2}kx^2+C$$
+In this case, $C$ has an obvious choice: $0$. That way, potential energy is $0$ when the spring is totally relaxed (when $x=0$).
+
+\subsubsection{Equilibrium}
+Equilibrium is the position/state where the net force on an object is $0$. In the case of potential energy, we can think of equilibrium as the state where the conservative force to which the potential energy is tied
+is $0$. If we look at a graph of potential energy $U(x)$, the positions of equilibrium will be at critical points (i.e. minimums or maximums, consider the fact that $F(x) = -\frac{dU}{dx})$). There are
+three types of equilibria:
+\begin{itemize}
+    \item \textbf{Stable Equilibrium}, where moving the position of the object in question in either direction will result in a force which acts to return the object to equilibrium. On a graph of $U(x)$, this is
+        a local minimum. Moving the object in the negative $x$ direction, we reach a point on the graph of $U(x)$ where $F(x) = -\frac{dU}{dx})$ is pointing in the positive direction, and moving the object
+        in the positive $x$ direction, we reach a point where $F(x) = -\frac{dU}{dx}$ is pointing in the negative direction, both of which will work to move the object back to its stable equilibrium position.
+    \item \textbf{Unstable Equilibrium}, where moving the object in either direction will result in a force which acts to move the object away from the unstable equilibrium point. Consider a local
+        maximum.
+    \item \textbf{Metastable Equilibrium}, where moving the object in one direction will result in a force which acts to move the object back to the equilibrium position, and moving it in the other direction
+        will result in a force which acts to move it away from the equilibrium position.
+\end{itemize}
 \end{document}
